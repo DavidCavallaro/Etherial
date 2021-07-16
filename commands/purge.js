@@ -6,7 +6,7 @@ module.exports = {
   
         if(!amount) return message.reply('inserisci un numero di messaggi da eliminare!')
   
-        if(amount > 100) return message.reply(`I can delete a maximum of 100 messages!`)
+        if(amount > 100) return message.reply(`Posso eliminare un massimo di 100 messaggi!`)
   
         if(amount < 1) return message.reply(`you must specify a sum of at least one message!`)
   
