@@ -3,10 +3,8 @@ module.exports = async (client) => {
     
   
       let status = [
-          {name: `c!help for info`, type: 'PLAYING'},
-          {name: `${client.guilds.cache.size} servers | ${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)} users`, type: 'PLAYING'},
-          {name: `c!help for info`, type: 'PLAYING'},
-          {name: `Music commands online again!`, type: 'PLAYING'}
+          {name: `e!help per info`, type: 'PLAYING'},
+          {name: `essere schiavizzato`, type: 'PLAYING'}
       ]
       function setStatus(){
           let randomStatus = status[Math.floor(Math.random()*status.length)]
