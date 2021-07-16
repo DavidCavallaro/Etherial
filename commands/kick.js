@@ -21,35 +21,13 @@ module.exports = {
 
     member.kick(reason)
     .catch(err => {
-      if(err) return message.channel.send(`:x: Something went wrong...`)
+      if(err) return message.channel.send(`:x: Qualcosa è andato storto...`)
     })
 				
 		const toKick = message.mentions.members.first() || bot.users.cache.find(toBan => toBan.tag === args.slice(1).join(" "))|| await bot.fetchUser(args[1])
         
-		const kickembedserver = new Discord.MessageEmbed()
-			.setTitle('Kicked User.')
-			.setColor(`dd5437`)
-			.setThumbnail(member.user.displayAvatarURL())
-			.addFields(
-				{name: `User:`, value: member, inline: true},
-    			{name: `Moderator:`, value: message.author, inline: true},
-				{name: `Reason:`, value: reason, inline: true}
-			)
-			.setFooter(`- Service of Chill Vibes.`)
-      		.setTimestamp()
-    const kickembedmod = new Discord.MessageEmbed()
-      		.setTitle(`Warning! You performed an action on ${message.guild.name}.`)
-			.setColor(`dd5437`)
-    		.setThumbnail(member.user.displayAvatarURL())
-			.addFields(
-				{name: `User:`, value: member, inline: true},
-    			{name: `Moderator:`, value: message.author, inline: true},
-				{name: `Reason:`, value: reason, inline: true}
-			)
-      .setFooter(`- Service of Chill Vibes.`)
-      .setTimestamp()
-		toKick.send(`You are kicked from **${message.guild.name}** by **${message.author}** for **${reason}**.`)
-    message.channel.send(kickembedserver);
+		toKick.send(`Sei stato espulso da **${message.guild.name}** da **${message.author}** per **${reason}**.`)
+        message.channel.send(`${member} è stato espulso. Motivo: ${reason}`);
     message.author.send(kickembedmod);
 		message.guild.members.kick(toKick)
   }
