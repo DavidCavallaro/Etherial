@@ -8,7 +8,7 @@ module.exports = {
   
         if(amount > 100) return message.reply(`Posso eliminare un massimo di 100 messaggi!`)
   
-        if(amount < 1) return message.reply(`you must specify a sum of at least one message!`)
+        if(amount < 1) return message.reply(`devi specificare un numero valido!`)
   
         await message.channel.messages.fetch({limit: amount}).then(messages => {message.channel.bulkDelete(messages)});
         message.channel.send(`Ho eliminato ${clearargs} messaggi.`).then(msg => msg.delete({timeout:5000}))
